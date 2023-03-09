@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\ProjectController as ProjectController;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('projects', [ProjectController::class, 'index']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
